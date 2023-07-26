@@ -1,0 +1,28 @@
+{
+  "rooms": [
+    {
+      "roomNumber": "1",
+      "roomType": "Deluxe Room",
+      "amenities": "Air Conditioner, Free Wi-Fi, Tv, Bathroom, Kitchen",
+      "price": 500,
+      "photos": "https://avatars.githubusercontent.com/u/78205495?v=4",
+      "rating": 4.3
+    },
+    {
+      "roomNumber": "2",
+      "roomType": "Deluxe Room",
+      "amenities": "Air Conditioner, Free Wi-Fi, Tv, Bathroom, Kitchen",
+      "price": 1000,
+      "photos": "https://avatars.githubusercontent.com/u/78205495?v=4",
+      "rating": 3.5
+    },
+    {
+      "roomNumber": "3",
+      "roomType": "Private Suite",
+      "amenities": "Air Conditioner, Free Wi-Fi, Tv, Bathroom, Kitchen",
+      "price": 15000,
+      "photos": "https://avatars.githubusercontent.com/u/78205495?v=4",
+      "rating": 4.4
+    }
+  ]
+}
