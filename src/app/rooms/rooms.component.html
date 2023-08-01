@@ -9,6 +9,8 @@
 
 <h3 *ngIf="selectedRoom">{{ selectedRoom | json }}</h3>
 
+<router-outlet></router-outlet>
+
 <div>
   <button (click)="addRoom()">Add Room</button>
 </div>
@@ -20,3 +22,4 @@
 </div>
 
 <button (click)="toggle()">Toggle</button>
+

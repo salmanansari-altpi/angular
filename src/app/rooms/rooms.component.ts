@@ -14,6 +14,7 @@ import { HeaderComponent } from '../header/header.component';
 import { RoomsService } from './service/rooms.service';
 import { Observable, Subscription, map } from 'rxjs';
 import { HttpEventType } from '@angular/common/http';
+import { ConfigService } from '../services/config.service';
 
 @Component({
   selector: 'app-rooms',
@@ -53,7 +54,7 @@ export class RoomsComponent implements OnInit, DoCheck, AfterViewInit, OnDestroy
 
   // roomsCount$ = this.roomsService.getRooms$.pipe(map((rooms) => rooms.length))
 
-  constructor(private roomsService: RoomsService) {}
+  constructor(private roomsService: RoomsService, private config: ConfigService) {}
 
 
   ngOnInit() {

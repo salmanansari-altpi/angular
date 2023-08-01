@@ -8,7 +8,7 @@
   {{ successMessage }}
 </div>
 
-<form #roomsForm="ngForm" (ngSubmit)="addRoom()">
+<form #roomsForm="ngForm" (ngSubmit)="addRoom(roomsForm)">
   <div class="form-group">
     <input
       type="text"
@@ -67,8 +67,8 @@
       [(ngModel)]="rating"
       required
     />
-    <div *ngIf="roomsRating.errors?.['max']" class="alert alert-danger">
-      {{ roomsRating.errors | json }}
+    <div *ngIf="roomsRating.errors?.['min']" class="alert alert-danger">
+      Minlength should be 1
     </div>
   </div>
   <div class="">

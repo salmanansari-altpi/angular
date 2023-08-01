@@ -1,0 +1,203 @@
+<p>booking works!</p>
+{{ bookingForm.value | json }}
+{{ bookingForm.pristine | json }}
+{{ bookingForm.dirty | json }}
+
+<div>
+  <button type="button" class="btn btn-primary" (click)="addPassport()">Add Passport</button>
+</div>
+
+<form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
+  <div class="example-container">
+    <mat-form-field *ngIf="bookingForm.get('passport')">
+      <mat-label>Passport</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Passport Number"
+        formControlName="passport"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Room Id</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Room Id"
+        formControlName="roomId"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>guestEmail</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="guestEmail"
+        formControlName="guestEmail"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Booking status</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Booking Status"
+        formControlName="bookingStatus"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Booking Amount</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Booking Amount"
+        formControlName="bookingAmount"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mobile Number</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Mobile Number"
+        formControlName="mobileNumber"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Guest Name</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Guest Name"
+        formControlName="guestName"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <div formGroupName="address">
+      <mat-form-field>
+        <mat-label>Guest Address 1</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Guest Address 1"
+          formControlName="addressLine1"
+          required
+        />
+        <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Guest Address 2</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Guest Address 2"
+          formControlName="addressLine2"
+          required
+        />
+        <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Guest City</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Guest City"
+          formControlName="city"
+          required
+        />
+        <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Guest State</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Guest State"
+          formControlName="state"
+          required
+        />
+        <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Guest Country</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Guest Country"
+          formControlName="country"
+          required
+        />
+        <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Guest ZipCode</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Guest ZipCode"
+          formControlName="zipCode"
+          required
+        />
+        <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label>Guest Count</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Guest Count"
+        formControlName="guests"
+        required
+      />
+      <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+    </mat-form-field>
+    <div>
+      <button class="btn btn-primary" type="button" (click)="addGuest()">
+        Add Guest
+      </button>
+    </div>
+    <div formArrayName="guests">
+      <div *ngFor="let guest of guests.controls; let i = index">
+        <div [formGroupName]="i">
+          <mat-form-field>
+            <mat-label>Guest Name</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Guest Count"
+              formControlName="guests"
+              required
+            />
+            <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Guest Age</mat-label>
+            <input
+              type="number"
+              matInput
+              placeholder="Guest Age"
+              formControlName="age"
+              required
+            />
+            <!-- <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error> -->
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary">Submit</button>
+</form>
